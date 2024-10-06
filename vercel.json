@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "space-images-to-music/client/package.json", // Ruta actualizada
+      "use": "@vercel/static-build"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "space-images-to-music/server.js" // Ruta actualizada
+    },
+    {
+      "src": "/(.*)",
+      "dest": "space-images-to-music/client/build/\$1" // Ruta actualizada
+    }
+  ]
+}
